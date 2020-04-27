@@ -2,7 +2,7 @@ FROM python:3
 
 WORKDIR /app
 
-COPY gardena_ws.py /app
+COPY gardena2mqtt.py /app
 COPY startup.sh /app
 
 RUN chmod a+x /app/startup.sh
