@@ -64,15 +64,12 @@ def valveControl(deviceId,msg):
 def iterate(topic,msg):
     message = {}
     try:
-        for key, value in msg.items():
-            if key == 'type':
-                topic += '/'+value
-                del msg[key]
-
-        for key, value in msg.items():
-            if key == 'id':
-                topic += '/'+value
-                del msg[key]
+        if 'type' in msg.keys():
+            topic += '/'+msg['type']
+            del msg['type']
+        if 'id' in msg.keys():
+            topic += '/'+msg['id']
+            del msg['id']
     except:
         pass
 
