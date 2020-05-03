@@ -164,7 +164,7 @@ def main(argv):
     global API_KEY   
 
     try:
-        opts, args = getopt.getopt(argv, '', ["gardena_username=","gardena_password=","gardena_apikey=","mqtt_host=","mqtt_port=","mqtt_user=","mqtt_password=","mqtt_prefix="])
+        opts = getopt.getopt(argv, '', ["gardena_username=","gardena_password=","gardena_apikey=","mqtt_host=","mqtt_port=","mqtt_user=","mqtt_password=","mqtt_prefix="])
     except getopt.GetoptError:
         print("Missing parameters")
         exit(2)
