@@ -55,7 +55,9 @@ def valveControl(deviceId,msg):
     print(data)
     r = requests.put(SMART_HOST+'/v1/command/'+deviceId,data=json.dumps(data),headers=headers)
 
-    if (r.status_code != 200):
+    if (r.status_code == 200):
+        print('Command sent')
+    else:
         print(r.content)
     assert r.status_code == 200, r
 
